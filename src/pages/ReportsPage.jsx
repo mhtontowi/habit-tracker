@@ -136,6 +136,11 @@ const StatsContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  @media (max-width: 600px) {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
 `;
 const StatItem = styled.div`
   display: flex;
@@ -143,6 +148,10 @@ const StatItem = styled.div`
   gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
+
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
 `;
 const ChartContainer = styled.div`
   position: relative;
@@ -172,10 +181,30 @@ const CalendarGrid = styled.div`
   padding: 1rem;
   border-radius: 12px;
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 600px) {
+    gap: 4px; /* A smaller gap */
+    padding: 0.5rem; /* Less padding */
+    font-size: 0.9rem; /* Smaller base font for the numbers */
+  }
 `;
 const DayLabel = styled.div`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.accent};
+
+  @media (max-width: 360px) {
+    &:nth-child(1) { &::after { content: 'S' } }
+    &:nth-child(2) { &::after { content: 'M' } }
+    &:nth-child(3) { &::after { content: 'T' } }
+    &:nth-child(4) { &::after { content: 'W' } }
+    &:nth-child(5) { &::after { content: 'T' } }
+    &:nth-child(6) { &::after { content: 'F' } }
+    &:nth-child(7) { &::after { content: 'S' } }
+
+    /* Hide the original text content */
+    font-size: 0;
+  }
+
 `;
 const DayCell = styled.div`
   display: flex;
@@ -187,6 +216,11 @@ const DayCell = styled.div`
   margin: 0 auto;
   border: 2px solid ${({ isToday, theme }) => isToday ? theme.colors.white : 'transparent'};
   background-color: ${({ isCompleted, theme }) => isCompleted ? theme.colors.accent : 'transparent'};
+
+  @media (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export default ReportsPage;

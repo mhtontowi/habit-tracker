@@ -43,6 +43,12 @@ const FormContainer = styled.form`
   display: flex;
   gap: 0.5rem;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1rem; /* Add a bit more space between stacked items */
+    align-items: stretch; /* Make items stretch to fill the width */
+  }
 `;
 
 const Input = styled.input`
